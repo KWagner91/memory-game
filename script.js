@@ -1,16 +1,16 @@
 // Function for making 16 cards, displayed immediately on window.onload
 function displayCards() {
-  for (let x = 0; x < 4; x++) {
-    let newTr = document.createElement("tr");
-      newTr.setAttribute("id", "row"+ x);
-    let TrElement = document.getElementById("game");
-    TrElement.appendChild(newTr);
+	for (let x = 0; x < 4; x++) {
+		let newTr = document.createElement("tr");
+		newTr.setAttribute("id", "row"+ x);
+		let TrElement = document.getElementById("game");
+		TrElement.appendChild(newTr);
 
     for (let y = 0; y < 4; y++) {
-    let newTd = document.createElement("td");
-      newTd.className = "card hidden";
-    let TdElement = document.getElementById("row"+ x);
-    TdElement.appendChild(newTd);
+		let newTd = document.createElement("td");
+		newTd.className = "card hidden";
+		let TdElement = document.getElementById("row"+ x);
+		TdElement.appendChild(newTd);
   }
   }
 }
@@ -50,9 +50,9 @@ let moves = 0;
 
 // Function to assign randomized numbers from array to cards displayed
 function shuffleCards() {
-  for (let a = 0; a < newArray.length; a++) {
-    const arrayContent = newArray[a];
-    allCards[a].innerHTML += arrayContent;
+	for (let a = 0; a < newArray.length; a++) {
+		const arrayContent = newArray[a];
+		allCards[a].innerHTML += arrayContent;
     };
   };
 
@@ -64,15 +64,15 @@ function userClick() {
     allCards.forEach(function(item) {
     item.addEventListener("click", function() {
         if (clickCount < 2) {
-        clickCount++;
-        this.classList.remove("hidden");
-        this.classList.add("selected");
+			clickCount++;
+			this.classList.remove("hidden");
+			this.classList.add("selected");
       }
 
         if (userCard.length === 2) {
-        moves++;
-        document.getElementById("moves").innerHTML = moves;
-        setTimeout(cardMatch, 1500)
+			moves++;
+			document.getElementById("moves").innerHTML = moves;
+			setTimeout(cardMatch, 1500)
       }
 });
 });
@@ -83,30 +83,30 @@ function userClick() {
 // Function to check user choice
 const userCard = document.getElementsByClassName("selected");
 function cardMatch() {
-  if (userCard[0].innerHTML === userCard[1].innerHTML) {
-    correctGuess();
-    points++;
-    clickCount = 0;
-    if (points === 8) {
-      gameWon();
-    }
+	if (userCard[0].innerHTML === userCard[1].innerHTML) {
+		correctGuess();
+		points++;
+		clickCount = 0;
+		if (points === 8) {
+		  gameWon();
+		}
   }
-  else if (userCard[0].innerHTML !== userCard[1].innerHTML)  {
-    wrongGuess();
-    clickCount = 0;
-    turn++;
-    starRating();
-}
+	else if (userCard[0].innerHTML !== userCard[1].innerHTML)  {
+		wrongGuess();
+		clickCount = 0;
+		turn++;
+		starRating();
+	}
 }
 
 
 
 // Function to remove selected class from user choice
 function correctGuess() {
-  let selectedCard = document.querySelectorAll(".selected");
-  selectedCard.forEach(function(item) {
-  item.classList.add("correct");
-  item.classList.remove("selected");
+	let selectedCard = document.querySelectorAll(".selected");
+	selectedCard.forEach(function(item) {
+	item.classList.add("correct");
+	item.classList.remove("selected");
 });
 }
 
@@ -114,10 +114,10 @@ function correctGuess() {
 
 // Function to remove selected class from user choice
 function wrongGuess() {
-  let selectedCard = document.querySelectorAll(".selected");
-selectedCard.forEach(function(item) {
-  item.classList.remove("selected");
-  item.classList.add("hidden");
+	let selectedCard = document.querySelectorAll(".selected");
+	selectedCard.forEach(function(item) {
+		item.classList.remove("selected");
+		item.classList.add("hidden");
 });
 }
 
@@ -126,10 +126,10 @@ selectedCard.forEach(function(item) {
 
 // Stars
 function starRating() {
-var starRating = document.getElementsByClassName("checked")
-if (turn > 4) {
-  starRating[starRating.length - 1].classList.remove("checked");
-  turn = 0;
+	var starRating = document.getElementsByClassName("checked")
+	if (turn > 4) {
+		starRating[starRating.length - 1].classList.remove("checked");
+		turn = 0;
 }
 }
 
@@ -139,15 +139,15 @@ if (turn > 4) {
 /* Timer
 Reference for displaying time (s) in hh:mm:ss format: https://www.w3schools.com/howto/howto_js_countdown.asp */
 function startTimer() {
-const start = Date.now();
-setInterval(function() {
-    var delta = (Date.now() - start);
-    let seconds = Math.floor((delta % (1000 * 60)) / 1000);
-    let minutes = Math.floor((delta % (1000 * 60 * 60)) / (1000 * 60));
-    let hours = Math.floor((delta % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    document.getElementById("time-displayed").innerHTML = hours + "h " +
-    minutes + "m " + seconds + "s ";
-})
+	const start = Date.now();
+	setInterval(function() {
+		var delta = (Date.now() - start);
+		let seconds = Math.floor((delta % (1000 * 60)) / 1000);
+		let minutes = Math.floor((delta % (1000 * 60 * 60)) / (1000 * 60));
+		let hours = Math.floor((delta % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+		document.getElementById("time-displayed").innerHTML = hours + "h " +
+		minutes + "m " + seconds + "s ";
+	})
 }
 
 
@@ -156,7 +156,7 @@ setInterval(function() {
 // Button to refresh Game
 const buttonRestart = document.getElementById("restart");
 buttonRestart.addEventListener('click', function() {
-  location.reload();
+	location.reload();
 });
 
 
@@ -183,10 +183,10 @@ window.onclick = function(event) {
 
 
 function gameWon() {
-  modal.style.display = "block";
-   let finalTime = document.getElementById("time-displayed").innerHTML;
-   let starRating = document.querySelector(".stars").innerHTML;
-   document.getElementById("moves-finished").innerHTML = "You finished in " + moves + " moves.";
+	modal.style.display = "block";
+	let finalTime = document.getElementById("time-displayed").innerHTML;
+	let starRating = document.querySelector(".stars").innerHTML;
+	document.getElementById("moves-finished").innerHTML = "You finished in " + moves + " moves.";
     document.getElementById("time-finished").innerHTML = "Your final time is " + finalTime;
     document.getElementById("stars-finished").innerHTML = "You finished the game with " + starRating;
 }
@@ -198,10 +198,10 @@ function gameWon() {
 1) Create array of 2 x 8 numbers (myArray)
 2) Shuffle Array (shuffle()) */
 function game() {
-  document.getElementById("moves").innerHTML = "Move: " + moves;
-  shuffleCards();
-  userClick();
-  startTimer()
+	document.getElementById("moves").innerHTML = "Move: " + moves;
+	shuffleCards();
+	userClick();
+	startTimer()
 }
 
 game();
