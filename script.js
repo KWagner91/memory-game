@@ -56,3 +56,24 @@ function shuffleCards() {
     };
   };
 
+
+
+
+// Function for user to click on Cards
+function userClick() {
+    allCards.forEach(function(item) {
+    item.addEventListener("click", function() {
+        if (clickCount < 2) {
+        clickCount++;
+        this.classList.remove("hidden");
+        this.classList.add("selected");
+      }
+
+        if (userCard.length === 2) {
+        moves++;
+        document.getElementById("moves").innerHTML = moves;
+        setTimeout(cardMatch, 1500)
+      }
+});
+});
+}
