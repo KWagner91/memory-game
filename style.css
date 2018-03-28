@@ -127,6 +127,21 @@ Box Shadow Example P: http://www.css3.info/preview/box-shadow/ */
 
 
 
+/* ---- button ---- */
+#restart {
+    background-color: #f44336;
+    border: none;
+    color: #fff;
+    display: inline-block;
+    font-size: 14px;
+    padding: 10px 25px;
+    text-align: center;
+    text-decoration: none;
+}
+
+
+
+
 /* ---- Footer Styling ---- */
 footer {
   margin: auto;

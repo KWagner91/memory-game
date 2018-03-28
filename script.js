@@ -153,6 +153,15 @@ setInterval(function() {
 
 
 
+// Button to refresh Game
+const buttonRestart = document.getElementById("restart");
+buttonRestart.addEventListener('click', function() {
+  location.reload();
+});
+
+
+
+
 /* Play Game
 1) Create array of 2 x 8 numbers (myArray)
 2) Shuffle Array (shuffle()) */
