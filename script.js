@@ -136,6 +136,23 @@ if (turn > 4) {
 
 
 
+/* Timer
+Reference for displaying time (s) in hh:mm:ss format: https://www.w3schools.com/howto/howto_js_countdown.asp */
+function startTimer() {
+const start = Date.now();
+setInterval(function() {
+    var delta = (Date.now() - start);
+    let seconds = Math.floor((delta % (1000 * 60)) / 1000);
+    let minutes = Math.floor((delta % (1000 * 60 * 60)) / (1000 * 60));
+    let hours = Math.floor((delta % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    document.getElementById("time-displayed").innerHTML = hours + "h " +
+    minutes + "m " + seconds + "s ";
+})
+}
+
+
+
+
 /* Play Game
 1) Create array of 2 x 8 numbers (myArray)
 2) Shuffle Array (shuffle()) */
@@ -143,6 +160,7 @@ function game() {
   document.getElementById("moves").innerHTML = "Move: " + moves;
   shuffleCards();
   userClick();
+  startTimer()
 }
 
 game();
