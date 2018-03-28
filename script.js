@@ -124,6 +124,18 @@ selectedCard.forEach(function(item) {
 
 
 
+// Stars
+function starRating() {
+var starRating = document.getElementsByClassName("checked")
+if (turn > 4) {
+  starRating[starRating.length - 1].classList.remove("checked");
+  turn = 0;
+}
+}
+
+
+
+
 /* Play Game
 1) Create array of 2 x 8 numbers (myArray)
 2) Shuffle Array (shuffle()) */

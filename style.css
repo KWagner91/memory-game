@@ -118,6 +118,15 @@ Box Shadow Example P: http://www.css3.info/preview/box-shadow/ */
 
 
 
+
+/* ---- stars ---- */
+.checked {
+    color: #ff8c00;
+}
+
+
+
+
 /* ---- Footer Styling ---- */
 footer {
   margin: auto;
@@ -129,4 +138,7 @@ footer {
   font-size: 0.8em;
   text-align: center;
 }
+
+
+
 
