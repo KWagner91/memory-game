@@ -1,1 +1,69 @@
-/* CSS Style */
+/* ---- Basic Website styling, Flexbox container with .box and .tile children elements ---- */
+body {
+  font-family: "Noto Serif", serif;
+  font-size: 1.1em;
+  text-align: center;
+}
+
+
+.container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+
+.box {
+  align-self: auto;
+  margin: auto;
+  width: 100%;
+}
+
+
+.tile {
+  align-self: center;
+  flex-grow: 1;
+  height: auto;
+  width: 25%;
+}
+
+
+
+/* ---- Game Styling ---- */
+table {
+  background:	#783b07;
+  margin: auto;
+  width: 90%;
+}
+
+
+
+
+/* Cards
+Box Shadow Example P: http://www.css3.info/preview/box-shadow/ */
+.card {
+  background: url(background-84824_1280.jpg) no-repeat;
+  background-size: cover;
+  -moz-box-shadow: 5px 5px rgba(0,0,0,0.5);
+  -webkit-box-shadow: 5px 5px rgba(0,0,0,0.5);
+  box-shadow: 5px 5px rgba(0,0,0,0.5);
+}
+
+
+.hidden {
+  color: transparent;
+}
+
+
+.selected {
+  background: #fffacd;
+}
+
+
+.correct {
+  background: #228b22;
+  pointer-events: none;
+}
+
+
+
