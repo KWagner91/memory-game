@@ -77,3 +77,60 @@ function userClick() {
 });
 });
 }
+
+
+
+// Function to check user choice
+const userCard = document.getElementsByClassName("selected");
+function cardMatch() {
+  if (userCard[0].innerHTML === userCard[1].innerHTML) {
+    correctGuess();
+    points++;
+    clickCount = 0;
+    if (points === 8) {
+      gameWon();
+    }
+  }
+  else if (userCard[0].innerHTML !== userCard[1].innerHTML)  {
+    wrongGuess();
+    clickCount = 0;
+    turn++;
+    starRating();
+}
+}
+
+
+
+// Function to remove selected class from user choice
+function correctGuess() {
+  let selectedCard = document.querySelectorAll(".selected");
+  selectedCard.forEach(function(item) {
+  item.classList.add("correct");
+  item.classList.remove("selected");
+});
+}
+
+
+
+// Function to remove selected class from user choice
+function wrongGuess() {
+  let selectedCard = document.querySelectorAll(".selected");
+selectedCard.forEach(function(item) {
+  item.classList.remove("selected");
+  item.classList.add("hidden");
+});
+}
+
+
+
+
+/* Play Game
+1) Create array of 2 x 8 numbers (myArray)
+2) Shuffle Array (shuffle()) */
+function game() {
+  document.getElementById("moves").innerHTML = "Move: " + moves;
+  shuffleCards();
+  userClick();
+}
+
+game();
