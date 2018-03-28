@@ -162,6 +162,38 @@ buttonRestart.addEventListener('click', function() {
 
 
 
+/* Alert winning statistics
+Resource: https://www.w3schools.com/howto/howto_css_modals.asp */
+const modal = document.getElementById('modal');
+const btn = document.getElementById("test");
+var span = document.getElementsByClassName("close")[0];
+
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+
+
+function gameWon() {
+  modal.style.display = "block";
+   let finalTime = document.getElementById("time-displayed").innerHTML;
+   let starRating = document.querySelector(".stars").innerHTML;
+   document.getElementById("moves-finished").innerHTML = "You finished in " + moves + " moves.";
+    document.getElementById("time-finished").innerHTML = "Your final time is " + finalTime;
+    document.getElementById("stars-finished").innerHTML = "You finished the game with " + starRating;
+}
+
+
+
+
 /* Play Game
 1) Create array of 2 x 8 numbers (myArray)
 2) Shuffle Array (shuffle()) */

@@ -43,6 +43,19 @@ Stars: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_star_rating
 
     <section class="box game">
       <table id="game"> </table>
+       <div id="modal" class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <h3>Congratulation, you won the Game!</h3>
+          <h4>Here is a summary of your success:</h4>
+          <p id="stars-finished"></p>
+          <p id="time-finished"></p>
+          <p id="moves-finished"></p>
+          <hr>
+          <p>Do you wish to replay the game?</p>
+          <button id="reload" onclick="location.reload()">Restart</button>
+        </div>
+      </div>
     </section>
 
     <footer>
