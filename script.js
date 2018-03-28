@@ -45,3 +45,14 @@ let turn = 0;
 let clickCount = 0;
 let moves = 0;
 
+
+
+
+// Function to assign randomized numbers from array to cards displayed
+function shuffleCards() {
+  for (let a = 0; a < newArray.length; a++) {
+    const arrayContent = newArray[a];
+    allCards[a].innerHTML += arrayContent;
+    };
+  };
+
