@@ -117,3 +117,16 @@ Box Shadow Example P: http://www.css3.info/preview/box-shadow/ */
 
 
 
+
+/* ---- Footer Styling ---- */
+footer {
+  margin: auto;
+  overflow: hidden;
+}
+
+
+.footer {
+  font-size: 0.8em;
+  text-align: center;
+}
+
