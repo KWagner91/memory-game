@@ -1,3 +1,7 @@
+<!-- Resources:
+Stars: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_star_rating
+-->
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -8,6 +12,40 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+	
+	<div class="container">
+    <header class="box">
+      <h1>Memory Game</h1>
+      <p>Match a pair of 2 identical cards in this game!</p>
+      <p>All cards are shuffled and then presented face-down, you can flip 2 cards per turn to find the matching pairs.</p>
+      <p>A timer and a star ranking will display your success in the game!</p>
+    </header>
+
+    <section class="stars tile">
+      <span class="fa fa-star checked stars"></span>
+      <span class="fa fa-star checked stars"></span>
+      <span class="fa fa-star checked stars"></span>
+    </section>
+
+    <section class="time tile">
+      <p id="time-displayed"></p>
+    </section>
+
+    <section class="moves tile">
+      <p id="moves"></p>
+    </section>
+
+    <section class="tile">
+      <button id="restart">Restart</button>
+    </section>
+
+    <section class="box game">
+      <table id="game"> </table>
+    </section>
+
+    <footer>
+      <p class="footer"><em>Game Design and Functionality by Kerstin Wagner</em></p>
+    </footer>
 
     <script src="script.js"></script>
 </body>
