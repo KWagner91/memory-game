@@ -63,10 +63,11 @@ function shuffleCards() {
 function userClick() {
     allCards.forEach(function(item) {
     item.addEventListener("click", function() {
+		
         if (clickCount < 2) {
 			clickCount++;
-			this.classList.remove("hidden");
-			this.classList.add("selected");
+			this.classList.toggle("hidden");
+			this.classList.toggle("selected");
       }
 
         if (userCard.length === 2) {
@@ -74,6 +75,8 @@ function userClick() {
 			document.getElementById("moves").innerHTML = moves;
 			setTimeout(cardMatch, 1500)
       }
+		else
+			clickCount = 0;
 });
 });
 }
