@@ -127,7 +127,7 @@ function wrongGuess() {
 // Stars
 function starRating() {
 	var starRating = document.getElementsByClassName("checked")
-	if (turn > 4) {
+	if ((turn > 5) && (starRating.length > 1)) {
 		starRating[starRating.length - 1].classList.remove("checked");
 		turn = 0;
 }

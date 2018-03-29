@@ -11,8 +11,8 @@ Build a Memory Game, part of Udacity Course "Front-End Web Developer Nanodegree 
 
 
 ## External Resources Used
-1) [Unbiased shuffle algorithm is the Fisher-Yates (aka Knuth) Shuffle] (https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array/2450976#2450976)
-2) [Create a Modal Box] (https://www.w3schools.com/howto/howto_css_modals.asp)
+1) [Unbiased shuffle algorithm is the Fisher-Yates (aka Knuth) Shuffle](https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array/2450976#2450976)
+2) [Create a Modal Box](https://www.w3schools.com/howto/howto_css_modals.asp)
 
 
 
