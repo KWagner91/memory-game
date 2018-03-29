@@ -1,4 +1,7 @@
-// Function for making 16 cards, displayed immediately on window.onload
+/** 
+* @description makes a grid of 16 cards which are added to an HTML table element
+* displayed immediately on window.onload 
+*/
 function displayCards() {
 	for (let x = 0; x < 4; x++) {
 		let newTr = document.createElement("tr");
@@ -19,7 +22,11 @@ window.onload = displayCards();
 
 
 
-// Function for randomizing array
+/**
+ * @description Function for randomizing array
+ * @param {array} array
+ * @return {array} shuffled Array
+ */
 function shuffle(array) {
     let currentIndex = array.length, temporaryValue, randomIndex;
     while (currentIndex !== 0) {
@@ -48,7 +55,10 @@ let moves = 0;
 
 
 
-// Function to assign randomized numbers from array to cards displayed
+/**
+ * @description Function to assign randomized numbers from an array to cards displayed
+ * @returns Array content is displayed in DOM element
+ */
 function shuffleCards() {
 	for (let a = 0; a < newArray.length; a++) {
 		const arrayContent = newArray[a];
@@ -59,7 +69,11 @@ function shuffleCards() {
 
 
 
-// Function for user to click on Cards
+/**
+ * @description Function for user to click on Cards
+ * @constructor
+ * @param allCards (NodeList)
+ */
 function userClick() {
     allCards.forEach(function(item) {
     item.addEventListener("click", function() {
@@ -69,7 +83,6 @@ function userClick() {
 			this.classList.toggle("hidden");
 			this.classList.toggle("selected");
       }
-
         if (userCard.length === 2) {
 			moves++;
 			document.getElementById("moves").innerHTML = moves;
@@ -83,7 +96,11 @@ function userClick() {
 
 
 
-// Function to check user choice
+/**
+ * @description Function to check user choice
+ * @constructor
+ * @param {array} userCard
+ */
 const userCard = document.getElementsByClassName("selected");
 function cardMatch() {
 	if (userCard[0].innerHTML === userCard[1].innerHTML) {
@@ -104,7 +121,9 @@ function cardMatch() {
 
 
 
-// Function to remove selected class from user choice
+/**
+ * @description Function to remove selected class from card of user choice
+ */
 function correctGuess() {
 	let selectedCard = document.querySelectorAll(".selected");
 	selectedCard.forEach(function(item) {
@@ -115,7 +134,9 @@ function correctGuess() {
 
 
 
-// Function to remove selected class from user choice
+/**
+ * @description Function to remove selected class from card of user choice
+ */
 function wrongGuess() {
 	let selectedCard = document.querySelectorAll(".selected");
 	selectedCard.forEach(function(item) {
@@ -127,7 +148,9 @@ function wrongGuess() {
 
 
 
-// Stars
+/** 
+ * @description Function to change star rating depending on user performance ("turn") during the game
+ */
 function starRating() {
 	var starRating = document.getElementsByClassName("checked")
 	if ((turn > 5) && (starRating.length > 1)) {
@@ -139,8 +162,10 @@ function starRating() {
 
 
 
-/* Timer
-Reference for displaying time (s) in hh:mm:ss format: https://www.w3schools.com/howto/howto_js_countdown.asp */
+/**
+ * @description Timer function in hh:mm:ss format as DOM element
+Reference for displaying time (s) in hh:mm:ss format: https://www.w3schools.com/howto/howto_js_countdown.asp 
+*/
 function startTimer() {
 	const start = Date.now();
 	setInterval(function() {
@@ -156,7 +181,9 @@ function startTimer() {
 
 
 
-// Button to refresh Game
+/**
+ * @description Button to refresh Game
+ */
 const buttonRestart = document.getElementById("restart");
 buttonRestart.addEventListener('click', function() {
 	location.reload();
@@ -165,8 +192,10 @@ buttonRestart.addEventListener('click', function() {
 
 
 
-/* Alert winning statistics
-Resource: https://www.w3schools.com/howto/howto_css_modals.asp */
+/**
+ * @description Alert winning statistics to user
+Resource: https://www.w3schools.com/howto/howto_css_modals.asp 
+*/
 const modal = document.getElementById('modal');
 const btn = document.getElementById("test");
 var span = document.getElementsByClassName("close")[0];
@@ -176,6 +205,7 @@ var span = document.getElementsByClassName("close")[0];
 span.onclick = function() {
     modal.style.display = "none";
 }
+
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
@@ -197,9 +227,10 @@ function gameWon() {
 
 
 
-/* Play Game
-1) Create array of 2 x 8 numbers (myArray)
-2) Shuffle Array (shuffle()) */
+/**
+ * @description Function to play the game
+ * @constructor
+ */
 function game() {
 	document.getElementById("moves").innerHTML = "Move: " + moves;
 	shuffleCards();
